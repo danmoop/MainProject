@@ -11,5 +11,7 @@ Model - contains book data (Genre, author, title)
 
 
 localhost:8080/books - shows all book you've added
+
 localhost:8080/books/add - you can add a book
+
 localhost:8080/books/admin - page that can redirect you to addBook page and seeAllBooks page
