@@ -8,6 +8,8 @@
 
 <h2>All the books you've added</h2>
 
+<hr/>
+
 <div th:each="book : ${Books}">
     <h2 th:text="${book.title} + ' by ' + ${book.author} + '. Genre is ' + ${book.genre}"></h2>
 </div>

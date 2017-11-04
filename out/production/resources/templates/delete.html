@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Delete page</h2>
+<hr/>
+
+<div th:each="bookObj : ${BookList}">
+    <form action="#" th:action="@{/books/delete}" th:object="${bookObj}" method="post">
+        <input type="hidden" name="title" th:value="${bookObj.title}"/>
+        <input type="hidden" name="author" th:value="${bookObj.author}"/>
+        <input type="hidden" name="genre" th:value="${bookObj.genre}"/>
+
+        <input type="submit" th:value="${bookObj.title}"/>
+        <br/>
+        <br/>
+    </form>
+</div>
+
+</body>
+</html>

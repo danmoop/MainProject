@@ -35,11 +35,26 @@ public class BookController
         return "addBookForm";
     }
 
+    @GetMapping("/books/delete")
+    public String deleteBook(Model model)
+    {
+        model.addAttribute("BookList", bookService.getAllBooks());
+        return "delete";
+    }
+
     @PostMapping("/books/add")
     public String addedBook(@ModelAttribute Book book, Model model)
     {
         model.addAttribute("BookObject", book);
         bookService.addBook(book.getTitle(), book.getAuthor(), book.getGenre());
         return "result";
+    }
+
+    @PostMapping("/books/delete")
+    public String deletedBook(@ModelAttribute Book book, Model model)
+    {
+        bookService.deleteBook(book);
+        model.addAttribute("deletedBook", book);
+        return "deletedBookResult";
     }
 }

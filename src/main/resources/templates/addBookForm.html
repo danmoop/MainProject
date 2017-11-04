@@ -8,6 +8,8 @@
 
 <h2>Add Book Form</h2>
 
+<hr/>
+
 <form action="#" th:action="@{/books/add}" th:object="${BookObject}" method="post">
     <p>Title: <input type="text" th:field="*{title}"/></p>
     <p>Author: <input type="text" th:field="*{author}"/></p>
