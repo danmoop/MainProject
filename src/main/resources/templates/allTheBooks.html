@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h2>All the books you've added</h2>
+
+<div th:each="book : ${Books}">
+    <h2 th:text="${book.title} + ' by ' + ${book.author} + '. Genre is ' + ${book.genre}"></h2>
+</div>
+
+<br/>
+<br/>
+<a href="/books/admin"><button>Open admin page</button></a>
+
+</body>
+</html>
